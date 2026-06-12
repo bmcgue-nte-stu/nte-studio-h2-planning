@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NTE Studio — H2 2026 Planning Framework</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; background: #f5f5f5; color: #111; font-size: 13px; line-height: 1.5; }
+.page { max-width: 1100px; margin: 0 auto; padding: 28px 20px 44px; }
+.header { display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 14px; border-bottom: 3px solid #E50914; margin-bottom: 16px; }
+.header h1 { font-size: 21px; font-weight: 700; letter-spacing: -0.3px; }
+.header p { font-size: 12px; color: #666; margin-top: 2px; }
+.logo { font-size: 14px; font-weight: 700; white-space: nowrap; }
+.logo span { color: #E50914; }
+.themes { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 8px 12px; margin-bottom: 16px; }
+.themes-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-right: 4px; white-space: nowrap; }
+.theme-pill { font-size: 11px; color: #444; background: #f4f4f4; border: 1px solid #e0e0e0; border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card { background: #fff; border-radius: 10px; border: 1px solid #e0e0e0; overflow: hidden; display: flex; flex-direction: column; }
+.card-accent { height: 4px; }
+.accent-blue { background: #1A5FA8; } .accent-teal { background: #0F7B5E; } .accent-coral { background: #C94E25; } .accent-purple { background: #5A47C0; }
+.card-header { padding: 10px 14px 8px; border-bottom: 1px solid #f0f0f0; }
+.card-group-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 2px; }
+.card-names { font-size: 14px; font-weight: 700; }
+.card-domain { font-size: 11px; color: #666; margin-top: 1px; }
+.card-body { padding: 9px 14px; flex: 1; }
+.initiative { margin-bottom: 10px; }
+.initiative:last-child { margin-bottom: 0; }
+.init-title { font-size: 12px; font-weight: 600; display: flex; align-items: flex-start; gap: 6px; flex-wrap: wrap; }
+.init-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.dot-blue { background: #1A5FA8; } .dot-teal { background: #0F7B5E; } .dot-coral { background: #C94E25; } .dot-purple { background: #5A47C0; }
+.init-sub { font-size: 11px; color: #666; margin-top: 2px; padding-left: 11px; line-height: 1.45; }
+.badge { display: inline-flex; align-items: center; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 4px; margin-left: 5px; vertical-align: middle; line-height: 1.7; }
+.badge-warn { background: #FEF3C7; color: #92400E; }
+.badge-success { background: #D1FAE5; color: #065F46; }
+.badge-info { background: #DBEAFE; color: #1E40AF; }
+.badge-ai { background: #EDE9FE; color: #5B21B6; }
+.signal { padding: 7px 9px 8px; background: #fafafa; border-top: 1px solid #f0f0f0; }
+.signal-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 2px; }
+.signal-text { font-size: 11px; color: #555; line-height: 1.45; }
+.detail-box { margin-top: 6px; padding: 7px 9px; background: #f8f8f8; border: 1px solid #e8e8e8; border-radius: 6px; }
+.detail-row { display: flex; align-items: flex-start; gap: 5px; font-size: 11px; color: #555; line-height: 1.4; margin-bottom: 4px; }
+.detail-row:last-child { margin-bottom: 0; }
+.dr-icon { flex-shrink: 0; color: #aaa; margin-top: 1px; font-size: 12px; }
+.ai-framework { margin-top: 8px; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
+.ai-fw-header { background: #1a1a1a; color: #fff; padding: 5px 10px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.ai-pillar { display: flex; align-items: flex-start; gap: 8px; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; background: #fafafa; }
+.ai-pillar:last-child { border-bottom: none; }
+.pillar-icon { width: 22px; height: 22px; border-radius: 5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+.icon-purple { background: #EEEDFE; color: #534AB7; } .icon-teal { background: #E1F5EE; color: #0F6E56; }
+.icon-amber { background: #FAEEDA; color: #854F0B; } .icon-blue { background: #E6F1FB; color: #185FA5; }
+.icon-coral { background: #FAECE7; color: #993C1D; }
+.pillar-name { font-size: 11px; font-weight: 700; color: #111; margin-bottom: 2px; }
+.pillar-desc { font-size: 10.5px; color: #555; line-height: 1.4; }
+.vtag { display: inline-block; font-size: 9px; font-weight: 600; padding: 1px 5px; border-radius: 3px; background: #DBEAFE; color: #1E40AF; margin: 1px 1px 1px 0; }
+.vel-strip { display: flex; gap: 6px; margin-top: 5px; }
+.vel-card { flex: 1; background: #fff; border: 1px solid #e8e8e8; border-radius: 5px; padding: 5px 7px; }
+.vel-num { font-size: 11px; font-weight: 700; margin-bottom: 1px; }
+.vel-lbl { font-size: 10px; color: #777; line-height: 1.3; }
+.case-box { margin-top: 6px; background: #0D0D0D; border-radius: 5px; padding: 7px 9px; }
+.case-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #E50914; margin-bottom: 5px; }
+.case-row { font-size: 10px; color: #ccc; line-height: 1.5; margin-bottom: 3px; }
+.case-row strong { color: #fff; }
+.footer { margin-top: 16px; padding-top: 10px; border-top: 1px solid #e0e0e0; text-align: center; font-size: 11px; color: #999; }
+@media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .header { flex-direction: column; align-items: flex-start; gap: 6px; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div>
+      <h1>NTE Studio &mdash; H2 2026 Planning</h1>
+      <p>Cross-functional partner allocations and focus areas &nbsp;&middot;&nbsp; June 2026</p>
+    </div>
+    <div class="logo"><span>NTE</span> Studio</div>
+  </div>
+
+  <div class="themes">
+    <span class="themes-label">H2 Themes</span>
+    <span class="theme-pill">AI-first support posture</span>
+    <span class="theme-pill">Deprecation &amp; migration coverage</span>
+    <span class="theme-pill">Facility buildout readiness</span>
+    <span class="theme-pill">Rights &amp; finance consolidation</span>
+    <span class="theme-pill">FTAB / linear ingest expansion</span>
+    <span class="theme-pill">AI reshaping the PDLC</span>
+  </div>
+
+  <div class="grid">
+
+    <!-- ── GROUP 1 ── -->
+    <div class="card">
+      <div class="card-accent accent-blue"></div>
+      <div class="card-header">
+        <div class="card-group-label">Partner Group 1</div>
+        <div class="card-names">Sameer / Naz</div>
+        <div class="card-domain">SPE &nbsp;&middot;&nbsp; Content Production &amp; Studio</div>
+      </div>
+      <div class="card-body">
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-blue"></span>Creative Review</div>
+          <div class="init-sub">PIX transition; NTE Studio exec concierge support model in scope.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-blue"></span>Content Hub &mdash; Aspera Desktop Migration <span class="badge badge-warn">MIGRATION</span></div>
+          <div class="init-sub">Aspera On Cloud EOL transitioning to Aspera Desktop client. Product owner awareness in motion; NTE Studio tracking supportability implications for the desktop rollout.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-blue"></span>MPS Footage Ingest &mdash; Product / Software</div>
+          <div class="init-sub">SOv2 rollout, Media Foundations track; Supportability Review underway.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-blue"></span>Orion</div>
+          <div class="init-sub">Netflix&rsquo;s internal content launch scheduling UI &mdash; used by content schedulers to visualize, analyze, and plan the Netflix content slate. A supportability review is currently underway to define NTE Studio&rsquo;s in-service posture.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-blue"></span>WPS Data Express <span class="badge badge-ai">AI &middot; PDLC SIGNAL</span></div>
+          <div class="init-sub">A Slack bot that delivers AI-powered data summaries and automated reports to supported Product and Engineering teams. The Script Hub Digest leverages the bot to surface AI-summarized Zendesk tickets to Product &amp; Engineering &mdash; increasing issue visibility and in some cases accelerating resolution.</div>
+          <div class="detail-box">
+            <div class="detail-row"><span class="dr-icon">&bull;</span><strong>Agent POC:</strong> Kathryn Hughes</div>
+          </div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-blue"></span>ProdOps Mentorship Pilot Program <span class="badge badge-info">IN PROGRESS</span></div>
+          <div class="init-sub">Moving NTE upstream by overlapping with engineering workflows — focused on root-cause investigation over ticket volume, embedded SME development across regional leads (APAC, Warsaw, UCAN), and bridging creative partners and engineering with a unified technical language.</div>
+          <div class="detail-box">
+            <div class="detail-row"><span class="dr-icon">&bull;</span><strong>Pilot POC:</strong> Babak Andishmand</div>
+          </div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-blue"></span>Project X-Ray Pilot &mdash; Content Intelligence Engineering <span class="badge badge-info">ACTIVE PILOT</span></div>
+          <div class="init-sub">Piloted with Content Intelligence Engineering (Manny de Souza). TEDs run AI-assisted diagnostics on repos to surface root-cause hypotheses and deliver pre-diagnosed Jira briefs — without touching code. NTE operates up to the engineering line, never past it.</div>
+          <div class="detail-box">
+            <div class="detail-row"><span class="dr-icon">&bull;</span><strong>Pilot POC:</strong> Edgar Furse</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="signal">
+        <div class="signal-label">Partner Signal</div>
+        <div class="signal-text">Sameer aligned on enablement-first / AI investment. Media Tools (Gen AI in Content Hub) is the 2030 north star. WPS Data Express validates AI rapidly changing the PDLC. X-Ray pilot with CIE positions NTE Studio as a diagnostic partner, not just a dispatcher.</div>
+      </div>
+    </div>
+
+    <!-- ── GROUP 2 ── -->
+    <div class="card">
+      <div class="card-accent accent-teal"></div>
+      <div class="card-header">
+        <div class="card-group-label">Partner Group 2</div>
+        <div class="card-names">Emeka &nbsp;&middot;&nbsp; Senthil &nbsp;&middot;&nbsp; Kathy &nbsp;&middot;&nbsp; Sangeeta</div>
+        <div class="card-domain">Content Planning &amp; Finance Legal &nbsp;&middot;&nbsp; Legal &amp; Finance Eng &nbsp;&middot;&nbsp; CBPF &nbsp;&middot;&nbsp; CIS</div>
+      </div>
+      <div class="card-body">
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-teal"></span>CAM development &amp; progression</div>
+          <div class="init-sub">Woven into CBP onboarding; growing maturity signal.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-teal"></span>Money Ball deprecation &rarr; Rights Management <span class="badge badge-warn">MIGRATION</span></div>
+          <div class="init-sub">Finance + Legal Eng now under one roof (Senthil); consolidation opportunity for NTE Studio positioning across both sub-spaces.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-teal"></span>SAVIYNT &mdash; Enterprise Finance expansion</div>
+          <div class="init-sub">Feeler stage; Contact Lifecycle pilot underway in Enterprise Finance.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-teal"></span>Incident Management Framework &mdash; CBP SRE Partnership <span class="badge badge-info">IN PROGRESS</span></div>
+          <div class="init-sub">Joint NTE + CBP SRE framework built around hyper-realistic incident drills (Table Tops) and post-incident reconstructions (Replays). Focused on building confident, distributed incident response capability across NTE rather than concentrating it in a few SMEs. Starting with Studio vertical in H2, expanding to AMERS/APAC.</div>
+          <div class="detail-box">
+            <div class="detail-row"><span class="dr-icon">&bull;</span><strong>Table Tops:</strong> Structured simulations jointly run by NTE and CBP SRE — severity assessment, escalation judgment, incident communication under realistic conditions.</div>
+            <div class="detail-row"><span class="dr-icon">&bull;</span><strong>Replays:</strong> Post-incident reconstructions driven by CBP SRE to refine the Ticket-to-Incident progression model.</div>
+            <div class="detail-row"><span class="dr-icon">&bull;</span><strong>H2 Timeline:</strong> First Table Top (EMEA) Q3&ndash;Q4 &middot; AMERS/APAC expansion Q3&ndash;Q4 &middot; SRE-driven Replays Q4</div>
+            <div class="detail-row"><span class="dr-icon">&bull;</span><strong>Sponsors:</strong> Babak Andishmand &amp; Adam Flynn</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="signal">
+        <div class="signal-label">Partner Signal</div>
+        <div class="signal-text">Finance and Legal Engineering officially unified under Senthil. Incident Management framework formalizes the NTE &mdash; CBP SRE partnership, building evenly distributed incident response capability across all NTE verticals heading into H2.</div>
+      </div>
+    </div>
+
+    <!-- ── GROUP 3 ── -->
+    <div class="card">
+      <div class="card-accent accent-coral"></div>
+      <div class="card-header">
+        <div class="card-group-label">Partner Group 3</div>
+        <div class="card-names">Ritu &nbsp;/&nbsp; McKenzie</div>
+        <div class="card-domain">CPD &nbsp;&middot;&nbsp; CPOP</div>
+      </div>
+      <div class="card-body">
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-coral"></span>TF1 &mdash; FTAB / Aggregation (Project Pisces)</div>
+          <div class="init-sub">June 22 go-live; CPOP H2 plans finalizing June 29; NTE Studio defining support R&amp;Rs with Launch Ops.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-coral"></span>CIG UI &mdash; support</div>
+          <div class="init-sub">Supportability review in motion; NTE scoping in-service ownership.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-coral"></span>REST API (SVOD) &mdash; support</div>
+          <div class="init-sub">Not mature enough for NTE scope yet; monitoring readiness.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-coral"></span>Launch Hub <span class="badge badge-info">NET NEW</span></div>
+          <div class="init-sub">Net new product support scope within Ritu/McKenzie&rsquo;s space. NTE Studio establishing supportability posture and in-service ownership model for Launch Hub.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-coral"></span>PufTech Mentorship Pilot Program <span class="badge badge-info">IN PROGRESS</span></div>
+          <div class="init-sub">PufTech Engineering is the partner pod for this pilot. Moving NTE upstream by overlapping with PufTech engineering workflows &mdash; focused on root-cause investigation over ticket volume, embedded SME development, and bridging creative partners and engineering with a unified technical language.</div>
+          <div class="detail-box">
+            <div class="detail-row"><span class="dr-icon">&bull;</span><strong>Pilot POC:</strong> Babak Andishmand</div>
+          </div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-coral"></span>Project X-Ray &mdash; SAP / TLM <span class="badge badge-success">LIVE RESULTS</span></div>
+          <div class="init-sub">X-Ray diagnostic protocol live with SAP Engineering (TLM pod). TEDs reading SAP repos to deliver pre-diagnosed Jira briefs before any ticket hits the on-call engineer.</div>
+          <div class="detail-box">
+            <div class="detail-row"><span class="dr-icon">&#10003;</span><strong>SAP Fix It Friday:</strong> NTE diagnostic findings aligned with Eng on all reviewed tickets.</div>
+            <div class="detail-row"><span class="dr-icon">&#10003;</span>Eng Manager committed to 5 tickets on next Fix It Friday round.</div>
+            <div class="detail-row"><span class="dr-icon">&#10003;</span>3 Jiras <strong>CLOSED</strong> directly from NTE backlog review.</div>
+            <div class="detail-row"><span class="dr-icon">&rarr;</span>Working with Eng to develop on-call workflow integration.</div>
+          </div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-coral"></span>ZD Custom Object &mdash; Slate Manager Production Context <span class="badge badge-info">IN PROGRESS</span></div>
+          <div class="init-sub">Surfaces Slate Manager production data directly in the ZD ticket view at triage. Originated in Ritu/McKenzie&rsquo;s space to auto-detect High Priority titles and adjust escalation priority from source of truth &mdash; initially applied to Marketing Ops escalations, now expanding cross-pod.</div>
+          <div class="detail-box">
+            <div class="detail-row"><span class="dr-icon">&bull;</span><strong>Automated SMZD sync</strong> slated for Q3 &middot; Interim: specialists update production titles directly in ZD</div>
+            <div class="detail-row"><span class="dr-icon">&bull;</span>High Priority flag persists and is visible across all pods</div>
+            <div class="detail-row"><span class="dr-icon">&bull;</span>Moving toward production</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="signal">
+        <div class="signal-label">Partner Signal</div>
+        <div class="signal-text">TF1 is the FTAB support template. X-Ray SAP pilot is the proof of concept for the full Engineering Partnership model. Fix It Friday results confirm NTE diagnostics align with Eng findings &mdash; the handshake is working.</div>
+      </div>
+    </div>
+
+    <!-- ── GROUP 4 ── -->
+    <div class="card">
+      <div class="card-accent accent-purple"></div>
+      <div class="card-header">
+        <div class="card-group-label">Partner Group 4</div>
+        <div class="card-names">Tammy &nbsp;/&nbsp; Fabrice &nbsp;/&nbsp; Bobby &nbsp;/&nbsp; Greg</div>
+        <div class="card-domain">Studio Management Services &nbsp;&middot;&nbsp; INE &nbsp;&middot;&nbsp; TID + OCNDE &nbsp;&middot;&nbsp; Post Services</div>
+      </div>
+      <div class="card-body">
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-purple"></span>Fort Monmouth build &mdash; TID &amp; SMS collab</div>
+          <div class="init-sub">New UCAN studio site; TSOS on-site posture; NTE Studio expanding footprint.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-purple"></span>Atlanta decommission <span class="badge badge-warn">DECOMM</span></div>
+          <div class="init-sub">TSOS wind-down support; operational coverage planning required.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-purple"></span>MPS Footage Ingest &mdash; Kiosk / hardware</div>
+          <div class="init-sub">Separate track from Software; currently within supportability review.</div>
+        </div>
+
+        <div class="initiative">
+          <div class="init-title"><span class="init-dot dot-purple"></span>AI-First Network Support Model &mdash; INE Skills Marketplace</div>
+          <div class="init-sub">Claude-powered support model purpose-built for network infrastructure. Indexes the INE Skills Marketplace repo as the authoritative runbook source, enabling consistent AI-assisted triage and resolution across all NTE verticals.</div>
+
+          <div class="ai-framework">
+            <div class="ai-fw-header">AI-First Network Support Model &nbsp;&middot;&nbsp; INE Skills Marketplace</div>
+
+            <div class="ai-pillar">
+              <div class="pillar-icon icon-purple">&#9795;</div>
+              <div>
+                <div class="pillar-name">Repository Indexing</div>
+                <div class="pillar-desc">NTE repo (8 skill files + verticals/) and INE repo (ocine-skills) indexed as authoritative runbook source of truth. Content Atlas + Prequel repos in X-Ray. TEDs own repo quality and freshness.</div>
+              </div>
+            </div>
+
+            <div class="ai-pillar">
+              <div class="pillar-icon icon-teal">&#9000;</div>
+              <div>
+                <div class="pillar-name">Claude-Powered Support</div>
+                <div class="pillar-desc">N-Tech Assistant front door via claude.ai &middot; #ine-help &middot; #ask-ine &middot; #ntech-ine. Skill dispatch across <span class="vtag">NTE-STU</span><span class="vtag">NTE-ANI</span><span class="vtag">NTE-ENT</span><span class="vtag">NTE-VFX</span><span class="vtag">NTE-GAM</span>. Executes via SNAQbot &middot; Mist &middot; OCAdmin &middot; Arista CLI &middot; Jira &middot; Carrier NOC.</div>
+              </div>
+            </div>
+
+            <div class="ai-pillar">
+              <div class="pillar-icon icon-amber">&#9873;</div>
+              <div>
+                <div class="pillar-name">Friction Identification</div>
+                <div class="pillar-desc">Claude prompting against indexed repos to surface recurring failure patterns, toil hotspots, and escalation gaps &mdash; feeding continuous runbook improvement and repo freshness cycles.</div>
+              </div>
+            </div>
+
+            <div class="ai-pillar">
+              <div class="pillar-icon icon-blue">&uarr;</div>
+              <div>
+                <div class="pillar-name">Support Parity &amp; Velocity</div>
+                <div class="pillar-desc">Consistent runbook quality regardless of vertical or specialist.</div>
+                <div class="vel-strip">
+                  <div class="vel-card"><div class="vel-num" style="color:#185FA5;">&darr; Escalations</div><div class="vel-lbl">Issues resolved by NTE before reaching Engineering</div></div>
+                  <div class="vel-card"><div class="vel-num" style="color:#0F6E56;">&uarr; Eng hrs recovered</div><div class="vel-lbl">Engineering time reclaimed per quarter from NTE absorption</div></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="signal">
+        <div class="signal-label">Partner Signal</div>
+        <div class="signal-text">INE/TID/Fabrice partnership is strong. Post Services (Greg Barrett) R&amp;R documentation needed before H2 kicks off.</div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
+</body>
+</html>
