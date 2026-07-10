@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NTE Studio Transformation Roadmap</title>
+<style>
+  body {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    background: #F7F6F2;
+    color: #2C2C2A;
+    margin: 0;
+    padding: 40px 48px;
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 4px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #5F5E5A;
+    margin: 0 0 28px;
+  }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    table-layout: fixed;
+  }
+  col.label { width: 130px; }
+  th {
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #5F5E5A;
+    padding: 4px 6px 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  th.phase {
+    color: #26215C;
+  }
+  td.label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2C2C2A;
+    vertical-align: top;
+    padding: 14px 6px;
+  }
+  td.cell {
+    background: #FFFFFF;
+    border: 1px solid #E3E1D8;
+    border-radius: 10px;
+    padding: 14px 16px;
+    vertical-align: top;
+  }
+  .cell-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #26215C;
+    margin: 0 0 6px;
+  }
+  .cell-body {
+    font-size: 12.5px;
+    color: #5F5E5A;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .footer {
+    margin-top: 24px;
+    background: #EEEDFE;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: #3C3489;
+    line-height: 1.6;
+  }
+  .footer strong { color: #26215C; }
+  .phase-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #5F5E5A;
+    background: #EDECE4;
+    border-radius: 999px;
+    padding: 2px 10px;
+    margin-bottom: 6px;
+  }
+  .north-star {
+    font-size: 15px;
+    font-weight: 600;
+    color: #26215C;
+    margin: 0 0 28px;
+    padding: 14px 18px;
+    background: #FFFFFF;
+    border: 1px solid #D9D6EE;
+    border-left: 4px solid #3C3489;
+    border-radius: 8px;
+    line-height: 1.5;
+  }
+  .impact {
+    margin-top: 16px;
+    background: #FFFFFF;
+    border: 1px solid #E3E1D8;
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .impact-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #5F5E5A;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0 0 10px;
+  }
+  .impact-body {
+    font-size: 13px;
+    color: #2C2C2A;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .impact-body + .impact-body {
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+  <h1>NTE Studio transformation roadmap</h1>
+  <p class="subtitle">Phased view against short / mid / long-term framing — TES/TEDS, TSOS, WPS Studio</p>
+  <p class="north-star">NTE Studio stops absorbing friction and starts preventing it. Trading ticket volume for structural influence over product reliability, engineering velocity, and the PDLC itself.</p>
+
+  <table>
+    <colgroup>
+      <col class="label">
+      <col><col><col>
+    </colgroup>
+    <thead>
+      <tr>
+        <th></th>
+        <th class="phase">Phase 1 &middot; short term<br><span style="font-weight:400;text-transform:none;letter-spacing:normal;color:#8A8980;">through end of 2026</span></th>
+        <th class="phase">Phase 2 &middot; mid term<br><span style="font-weight:400;text-transform:none;letter-spacing:normal;color:#8A8980;">6&ndash;18 months</span></th>
+        <th class="phase">Phase 3 &middot; long term<br><span style="font-weight:400;text-transform:none;letter-spacing:normal;color:#8A8980;">18 months&ndash;3 years</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="label">TES/TEDS</td>
+        <td class="cell">
+          <p class="cell-title">Project X-Ray as theme</p>
+          <p class="cell-body">Pod flavors stand up: ProdOps (CIE Pilot), TLM (SAP POC), Finance &amp; Legal (SPUDS), + Others incl. Localization. Ntech Assistant (T0) deploys to Slack. Pod repositories compound.</p>
+        </td>
+        <td class="cell">
+          <p class="cell-title">X-Ray fluid, TES slims</p>
+          <p class="cell-body">All pod flavors running and mature. Citizen building becomes a scoped role expectation. TEDS grows into deeper diagnostics as T0/T1 absorb more volume.</p>
+        </td>
+        <td class="cell">
+          <p class="cell-title">Prevention layer + Tech Leads</p>
+          <p class="cell-body">Self-healing (SRE Track A + repo-driven Track B) pre-empts contacts before T0. 5&ndash;6 regional Tech Leads (EMEA/UCAN/APAC) own Operational Excellence with direct reports.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">TSOS</td>
+        <td class="cell">
+          <p class="cell-title">Shared Assistant, closing parity</p>
+          <p class="cell-body">Same Assistant orchestrates network + production tech infra agents. EMEA/UCAN near parity. MSP handles ground-level handoff. JIRA automation underway.</p>
+        </td>
+        <td class="cell">
+          <p class="cell-title">Full regional parity</p>
+          <p class="cell-body">EMEA and UCAN reach full parity &mdash; the phase where potential Org Composition changes land. Citizen building formalizes to match TES/TEDS.</p>
+        </td>
+        <td class="cell">
+          <p class="cell-title">Steady-state, self-healing</p>
+          <p class="cell-body">Regional parity is steady-state. MSP footprint narrows toward hands-on work as the prevention layer absorbs more ground-level volume.</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">WPS Studio</td>
+        <td class="cell">
+          <p class="cell-title">NSights foundation</p>
+          <p class="cell-body">Governance + Data as a Product (NSights, WPS Data Express, Claudit, Script Hub Digest). Next-gen value metrics gated on X-Ray fluidity.</p>
+        </td>
+        <td class="cell">
+          <p class="cell-title">Next-gen tracking live</p>
+          <p class="cell-body">Eng Triage Cycles Saved, Time-to-Permanent-Fix, Brief Quality, Eng-Hour Deflection instrumented on NSights now that X-Ray is fluid.</p>
+        </td>
+        <td class="cell">
+          <p class="cell-title">Strategic influence layer</p>
+          <p class="cell-body">NSights matures into a personalized delivery layer. Analysts shift from reporting to direct PDLC/executive decision influence.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <strong>Throughline:</strong> one shared Ntech Assistant compounds across all three functions starting in Phase 1. X-Ray maturity in Phase 2 is the trigger that unlocks WPS value tracking and TES capacity release. Phase 3 shifts effort from resolving issues to preventing them before they occur.
+  </div>
+
+  <div class="impact">
+    <p class="impact-title">Business impact &mdash; where NTE Studio ends up</p>
+    <p class="impact-body">By Phase 3, NTE Studio is no longer measured by contacts closed. TES/TEDS operate as a code-level diagnostic partner inside Engineering with a real technical career track. TSOS has shifted ground-level toil to MSPs and redirected its own capacity into scaled production technology system administration and design. WPS has moved from reporting outcomes to shaping them, with a standing seat in PDLC and product decisions.</p>
+    <p class="impact-body">One shared Assistant and one X-Ray-grade diagnostic engine compound the same knowledge across all three functions instead of three teams rebuilding it separately. The capacity that engine frees up in Phase 1&ndash;2 is what funds the Prevention Layer in Phase 3.</p>
+  </div>
+</body>
+</html>
